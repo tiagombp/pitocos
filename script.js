@@ -67,6 +67,11 @@ const pitocos = {
 
         cont_geral.appendChild(novo_container_do_pitoco);
 
+        // inclui a custom property
+
+        const root = document.documentElement;
+        root.style.setProperty(`--${id_pitoco}`, dados_pitoco.valor_inicial);
+
     },
 
     monitora_pitoco : (id_pitoco) => {
@@ -81,6 +86,12 @@ const pitocos = {
         const id_pitoco = e.target.id;
         const valor_pitoco = document.querySelector(`[data-nome-valor-pitoco="${id_pitoco}"]`);
         valor_pitoco.innerText = e.target.value;
+
+        // atualiza a custom property
+
+        const root = document.documentElement;
+        root.style.setProperty(`--${id_pitoco}`, e.target.value);
+
 
     },
 
