@@ -55,6 +55,7 @@ const pitocos = {
 
         const texto_valor = document.createElement('span');
         texto_valor.innerText = dados_pitoco.valor_inicial;
+        texto_valor.dataset.nomeValorPitoco = id_pitoco;
 
         const novo_container_do_pitoco = document.createElement('div');
         novo_container_do_pitoco.classList.add('pitoco');
@@ -68,13 +69,33 @@ const pitocos = {
 
     },
 
+    monitora_pitoco : (id_pitoco) => {
+
+        const pitoco = document.querySelector('#' + id_pitoco);
+        pitoco.addEventListener('change', pitocos.faz_alguma_coisa);
+
+    },
+
+    faz_alguma_coisa : (e) => {
+
+        const id_pitoco = e.target.id;
+        const valor_pitoco = document.querySelector(`[data-nome-valor-pitoco="${id_pitoco}"]`);
+        valor_pitoco.innerText = e.target.value;
+
+    },
+
     init : () => {
 
         const lista_pitocos = Object.keys(pitocos.pitocos);
 
         console.log(lista_pitocos);
 
-        lista_pitocos.forEach(pitoco => pitocos.inclui_pitoco(pitoco));
+        lista_pitocos.forEach(pitoco => {
+            
+            pitocos.inclui_pitoco(pitoco);
+            pitocos.monitora_pitoco(pitoco);
+
+        });
 
 
     }
