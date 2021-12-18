@@ -10,8 +10,19 @@ const pitocos = {
             min : 1,
             max : 20,
             valor_inicial : 10,
-            nome : 'volume',
+            nome : 'Volume',
             css_var : 'volume'
+
+        },
+
+        saturacao : {
+
+            tipo : 'range',
+            min : 10,
+            max : 100,
+            valor_inicial : 10,
+            nome : 'Saturação',
+            css_var : 'saturacao'
 
         }
 
