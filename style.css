@@ -2,10 +2,43 @@
     box-sizing: border-box;
 }
 
+:root {
+
+    /* custom properties vão ser criadas aqui */
+
+}
+
 .embrulho {
 
     max-width: 600px;
     margin: 0 auto;
     margin-top: 10rem;
+
+}
+
+.painel-pitocos {
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 1rem;
+    font-size: .8rem;
+    width: 30vw;
+    border: 1px solid black;
+    padding: 0.5rem;
+    border-radius: 1em;
+
+}
+
+.pitoco {
+
+    display: flex;
+    align-items: center;
+
+}
+
+.pitoco * + * {
+
+    margin-left: .5em;
 
 }
